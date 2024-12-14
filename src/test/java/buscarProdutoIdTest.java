@@ -25,21 +25,20 @@ public class buscarProdutoIdTest {
         assertEquals("Camisa", buscado.getNome());
         }
 
-        @Test
-        public void testBuscarProdutoPorIdInexistente() {
-            // Criando um catálogo
-            Catalogo catalogo = new Catalogo();
+    @Test
+     public void testBuscarProdutoPorIdInexistente() {
+        // Criando um catálogo
+        Catalogo catalogo = new Catalogo();
+        // Adicionando produtos
+        Produto produto1 = new Produto(1, "Camisa", 50.0f);
+        Produto produto2 = new Produto(2, "Calça", 80.0f);
+        catalogo.adicionarProduto(produto1);
+        catalogo.adicionarProduto(produto2);
 
-            // Adicionando produtos
-            Produto produto1 = new Produto(1, "Camisa", 50.0f);
-            Produto produto2 = new Produto(2, "Calça", 80.0f);
-            catalogo.adicionarProduto(produto1);
-            catalogo.adicionarProduto(produto2);
-
-            // Buscando produto por um ID inexistente
-            Produto inexistente = catalogo.buscarProdutoPorId(99);
-            assertNull(inexistente);
-        }
+         // Buscando produto por um ID inexistente
+        Produto inexistente = catalogo.buscarProdutoPorId(99);
+        assertNull(inexistente);
     }
+}
 
 
