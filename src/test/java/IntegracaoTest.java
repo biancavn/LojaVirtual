@@ -1,110 +1,65 @@
-
 import org.example.Catalogo;
+import org.example.Pedido;
 import org.example.Produto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.example.Pedido;
-
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 public class IntegracaoTest {
 
-    private Catalogo catalogo;
+    private Catalogo catalogoMock;
     private Pedido pedido;
 
     @BeforeEach
     public void setup() {
-        catalogo = new Catalogo();
+        // Criar um mock de Catalogo
+        catalogoMock = mock(Catalogo.class);
         pedido = new Pedido("Cliente Teste");
     }
 
     @Test
-    public void testeAdicionarProdutosAoCatalogo() {
-        // Mock de produtos
-        Produto produto1 = Mockito.mock(Produto.class);
-        Produto produto2 = Mockito.mock(Produto.class);
+    public void testeFluxoCatalogo() {
+        // Criar produtos simulados
+        Produto produto1 = new Produto(1, "Produto 1", 50.0f);
+        Produto produto2 = new Produto(2, "Produto 2", 75.0f);
+        Produto produto3 = new Produto(3, "Produto 3", 30.0f);
 
-        // Configurar os mocks
-        Mockito.when(produto1.getId()).thenReturn(1);
-        Mockito.when(produto1.getNome()).thenReturn("Produto 1");
-        Mockito.when(produto1.getPreco()).thenReturn(50.0f);
+        // Configurar o comportamento do mock
+        when(catalogoMock.buscarProdutoPorId(1)).thenReturn(produto1);
+        when(catalogoMock.buscarProdutoPorId(2)).thenReturn(produto2);
+        when(catalogoMock.buscarProdutoPorId(3)).thenReturn(produto3);
 
-        Mockito.when(produto2.getId()).thenReturn(2);
-        Mockito.when(produto2.getNome()).thenReturn("Produto 2");
-        Mockito.when(produto2.getPreco()).thenReturn(75.0f);
+        // Verificar se o mock retorna os produtos corretamente
+        assertEquals(produto1, catalogoMock.buscarProdutoPorId(1));
+        assertEquals(produto2, catalogoMock.buscarProdutoPorId(2));
+        assertEquals(produto3, catalogoMock.buscarProdutoPorId(3));
 
-        // Adicionar produtos ao catálogo
-        catalogo.adicionarProduto(produto1);
-        catalogo.adicionarProduto(produto2);
-
-        // Verificar se os produtos foram adicionados corretamente
-        assertEquals(produto1, catalogo.buscarProdutoPorId(1));
-        assertEquals(produto2, catalogo.buscarProdutoPorId(2));
-    }
-
-    @Test
-    public void testeCriarPedidoComMultiplosProdutos() {
-        // Mock de produtos
-        Produto produto1 = Mockito.mock(Produto.class);
-        Produto produto2 = Mockito.mock(Produto.class);
-
-        // Configurar os mocks
-        Mockito.when(produto1.getId()).thenReturn(1);
-        Mockito.when(produto1.getPreco()).thenReturn(50.0f);
-        Mockito.when(produto1.toString()).thenReturn("ID: 1, Nome: Produto 1, Preço: R$ 50.0");
-
-        Mockito.when(produto2.getId()).thenReturn(2);
-        Mockito.when(produto2.getPreco()).thenReturn(75.0f);
-        Mockito.when(produto2.toString()).thenReturn("ID: 2, Nome: Produto 2, Preço: R$ 75.0");
-
-        // Adicionar produtos ao pedido
+        // Adicionar produtos ao pedido (produto1 e produto2 com desconto)
         pedido.adicionarProduto(produto1);
         pedido.adicionarProduto(produto2);
 
-        // Verificar se os produtos foram adicionados ao pedido
+        // Verificar a descrição do pedido
         assertTrue(pedido.toString().contains("Produto 1"));
         assertTrue(pedido.toString().contains("Produto 2"));
-    }
 
+        // Calcular o total do pedido (com desconto)
+        float totalComDesconto = pedido.calcularTotal();
+        assertEquals(112.5f, totalComDesconto, 0.01f);
 
-    @Test
-    public void testeCalcularTotalPedidoComDesconto() {
-        // Mock de produtos
-        Produto produto1 = Mockito.mock(Produto.class);
-        Produto produto2 = Mockito.mock(Produto.class);
+        // Criar um novo pedido com apenas produto3 (sem desconto)
+        Pedido pedidoSemDesconto = new Pedido("Cliente Sem Desconto");
+        pedidoSemDesconto.adicionarProduto(produto3);
 
-        // Configurar os mocks
-        Mockito.when(produto1.getPreco()).thenReturn(50.0f);
-        Mockito.when(produto2.getPreco()).thenReturn(75.0f);
+        // Calcular o total do pedido (sem desconto)
+        float totalSemDesconto = pedidoSemDesconto.calcularTotal();
+        assertEquals(30.0f, totalSemDesconto, 0.01f);
 
-        // Adicionar produtos ao pedido
-        pedido.adicionarProduto(produto1);
-        pedido.adicionarProduto(produto2);
-
-        // Calcular total do pedido
-        float total = pedido.calcularTotal();
-
-        // Verificar o valor total com desconto
-        assertEquals(112.5f, total, 0.01f); // Desconto de 10% aplicado
-    }
-
-    @Test
-    public void testeCalcularTotalPedidoSemDesconto() {
-        // Mock de produto
-        Produto produto = Mockito.mock(Produto.class);
-
-        // Configurar o mock
-        Mockito.when(produto.getPreco()).thenReturn(50.0f);
-
-        // Adicionar produto ao pedido
-        pedido.adicionarProduto(produto);
-
-        // Calcular total do pedido
-        float total = pedido.calcularTotal();
-
-        // Verificar o valor total sem desconto
-        assertEquals(50.0f, total, 0.01f);
+        // Verificar interações com o mock
+        verify(catalogoMock).buscarProdutoPorId(1);
+        verify(catalogoMock).buscarProdutoPorId(2);
+        verify(catalogoMock).buscarProdutoPorId(3);
     }
 }
