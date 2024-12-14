@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+
+
+dez. 13, 2024 11:19:52 PM LoggerTest configurarLogger
+INFO: Logger configurado com sucesso!
+dez. 13, 2024 11:19:52 PM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 13, 2024 11:19:52 PM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Iniciando teste: testeAdicionarProdutosAoCatalogo
+dez. 13, 2024 11:19:55 PM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Produtos adicionados ao catálogo.
+dez. 13, 2024 11:19:55 PM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Teste testeAdicionarProdutosAoCatalogo concluído com sucesso.
+dez. 13, 2024 11:19:55 PM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoSemDesconto
+INFO: Iniciando teste: testeCalcularTotalPedidoSemDesconto
+dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoSemDesconto
+INFO: Produto adicionado ao pedido.
+dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoSemDesconto
+INFO: Total calculado sem desconto: 50.0
+dez. 13, 2024 11:19:55 PM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 13, 2024 11:19:55 PM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Iniciando teste: testeCriarPedidoComMultiplosProdutos
+dez. 13, 2024 11:19:55 PM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Produtos adicionados ao pedido.
+dez. 13, 2024 11:19:55 PM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Teste testeCriarPedidoComMultiplosProdutos concluído com sucesso.
+dez. 13, 2024 11:19:55 PM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoComDesconto
+INFO: Iniciando teste: testeCalcularTotalPedidoComDesconto
+dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoComDesconto
+INFO: Produtos adicionados ao pedido.
+dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoComDesconto
+INFO: Total calculado com desconto: 112.5
