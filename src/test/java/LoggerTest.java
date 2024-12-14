@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LoggerTest {
 
-    private static final Logger logger = Logger.getLogger(IntegracaoTest.class.getName());
+    private static final Logger logger = Logger.getLogger(LoggerTest.class.getName());
 
     private Catalogo catalogo;
     private Pedido pedido;
@@ -20,10 +20,12 @@ public class LoggerTest {
     @BeforeAll
     public static void configurarLogger() {
         try {
+            logger.setUseParentHandlers(false); // Desativa os handlers padrão
+
             ConsoleHandler consoleHandler = new ConsoleHandler();
             consoleHandler.setLevel(Level.ALL);
             consoleHandler.setFormatter(new SimpleFormatter());
-
+        //Criando meu arquivo para salvar os loggers
             FileHandler fileHandler = new FileHandler("meu.log", true);
             fileHandler.setEncoding("UTF-8");
             fileHandler.setLevel(Level.ALL);
@@ -58,11 +60,9 @@ public class LoggerTest {
         logger.info("Iniciando teste: testeAdicionarProdutosAoCatalogo");
 
         try {
-            // Mock de produtos
             Produto produto1 = Mockito.mock(Produto.class);
             Produto produto2 = Mockito.mock(Produto.class);
 
-            // Configurar os mocks
             Mockito.when(produto1.getId()).thenReturn(1);
             Mockito.when(produto1.getNome()).thenReturn("Produto 1");
             Mockito.when(produto1.getPreco()).thenReturn(50.0f);
@@ -71,17 +71,18 @@ public class LoggerTest {
             Mockito.when(produto2.getNome()).thenReturn("Produto 2");
             Mockito.when(produto2.getPreco()).thenReturn(75.0f);
 
-            // Adicionar produtos ao catálogo
+            logger.info("Criando produtos: Produto 1 e Produto 2.");
+
             catalogo.adicionarProduto(produto1);
+            logger.info("Produto 1 adicionado ao catálogo.");
+
             catalogo.adicionarProduto(produto2);
+            logger.info("Produto 2 adicionado ao catálogo.");
 
-            logger.info("Produtos adicionados ao catálogo.");
-
-            // Verificar se os produtos foram adicionados corretamente
             assertEquals(produto1, catalogo.buscarProdutoPorId(1));
             assertEquals(produto2, catalogo.buscarProdutoPorId(2));
 
-            logger.info("Teste testeAdicionarProdutosAoCatalogo concluído com sucesso.");
+            logger.info("Produtos encontrados no catálogo com sucesso.");
         } catch (Exception e) {
             logger.warning("Erro no testeAdicionarProdutosAoCatalogo: " + e.getMessage());
         }
@@ -92,11 +93,9 @@ public class LoggerTest {
         logger.info("Iniciando teste: testeCriarPedidoComMultiplosProdutos");
 
         try {
-            // Mock de produtos
             Produto produto1 = Mockito.mock(Produto.class);
             Produto produto2 = Mockito.mock(Produto.class);
 
-            // Configurar os mocks
             Mockito.when(produto1.getId()).thenReturn(1);
             Mockito.when(produto1.getPreco()).thenReturn(50.0f);
             Mockito.when(produto1.toString()).thenReturn("ID: 1, Nome: Produto 1, Preço: R$ 50.0");
@@ -105,17 +104,18 @@ public class LoggerTest {
             Mockito.when(produto2.getPreco()).thenReturn(75.0f);
             Mockito.when(produto2.toString()).thenReturn("ID: 2, Nome: Produto 2, Preço: R$ 75.0");
 
-            // Adicionar produtos ao pedido
+            logger.info("Adicionando produtos ao pedido: Produto 1 e Produto 2.");
+
             pedido.adicionarProduto(produto1);
+            logger.info("Produto 1 adicionado ao pedido.");
+
             pedido.adicionarProduto(produto2);
+            logger.info("Produto 2 adicionado ao pedido.");
 
-            logger.info("Produtos adicionados ao pedido.");
-
-            // Verificar se os produtos foram adicionados ao pedido
             assertTrue(pedido.toString().contains("Produto 1"));
             assertTrue(pedido.toString().contains("Produto 2"));
 
-            logger.info("Teste testeCriarPedidoComMultiplosProdutos concluído com sucesso.");
+            logger.info("Produtos verificados no pedido com sucesso.");
         } catch (Exception e) {
             logger.warning("Erro no testeCriarPedidoComMultiplosProdutos: " + e.getMessage());
         }
@@ -126,27 +126,22 @@ public class LoggerTest {
         logger.info("Iniciando teste: testeCalcularTotalPedidoComDesconto");
 
         try {
-            // Mock de produtos
             Produto produto1 = Mockito.mock(Produto.class);
             Produto produto2 = Mockito.mock(Produto.class);
 
-            // Configurar os mocks
             Mockito.when(produto1.getPreco()).thenReturn(50.0f);
             Mockito.when(produto2.getPreco()).thenReturn(75.0f);
 
-            // Adicionar produtos ao pedido
             pedido.adicionarProduto(produto1);
+            logger.info("Produto 1 adicionado ao pedido.");
+
             pedido.adicionarProduto(produto2);
+            logger.info("Produto 2 adicionado ao pedido.");
 
-            logger.info("Produtos adicionados ao pedido.");
-
-            // Calcular total do pedido
             float total = pedido.calcularTotal();
+            logger.info("Total do pedido calculado (com desconto): " + total);
 
-            // Verificar o valor total com desconto
-            assertEquals(112.5f, total, 0.01f); // Desconto de 10% aplicado
-
-            logger.info("Total calculado com desconto: " + total);
+            assertEquals(112.5f, total, 0.01f);
         } catch (Exception e) {
             logger.warning("Erro no testeCalcularTotalPedidoComDesconto: " + e.getMessage());
         }
@@ -157,24 +152,16 @@ public class LoggerTest {
         logger.info("Iniciando teste: testeCalcularTotalPedidoSemDesconto");
 
         try {
-            // Mock de produto
             Produto produto = Mockito.mock(Produto.class);
-
-            // Configurar o mock
             Mockito.when(produto.getPreco()).thenReturn(50.0f);
 
-            // Adicionar produto ao pedido
             pedido.adicionarProduto(produto);
-
             logger.info("Produto adicionado ao pedido.");
 
-            // Calcular total do pedido
             float total = pedido.calcularTotal();
+            logger.info("Total do pedido calculado (sem desconto): " + total);
 
-            // Verificar o valor total sem desconto
             assertEquals(50.0f, total, 0.01f);
-
-            logger.info("Total calculado sem desconto: " + total);
         } catch (Exception e) {
             logger.warning("Erro no testeCalcularTotalPedidoSemDesconto: " + e.getMessage());
         }

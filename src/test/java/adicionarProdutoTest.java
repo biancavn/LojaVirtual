@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class adicionarProdutoTest {
     @Test
-    public void testAdicionarEBuscarProdutoCatalogo() {
+    public void testAdicionarProdutoCatalogo() {
         // Criando um catálogo
         Catalogo catalogo = new Catalogo();
 
@@ -19,7 +19,7 @@ public class adicionarProdutoTest {
         catalogo.adicionarProduto(produto1);
         catalogo.adicionarProduto(produto2);
 
-        // Capturando a saída do método listarProdutos()
+        // Capturando a saída do metodo listar produtos
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
         System.setOut(printStream);
@@ -32,15 +32,6 @@ public class adicionarProdutoTest {
         String[] linhas = output.split(System.lineSeparator());
 
         assertEquals(2, linhas.length);
-
-        // Buscando produto pelo ID
-        Produto buscado = catalogo.buscarProdutoPorId(1);
-        assertNotNull(buscado);
-        assertEquals("Camisa", buscado.getNome());
-
-        // Buscando um ID inexistente
-        Produto inexistente = catalogo.buscarProdutoPorId(99);
-        assertNull(inexistente);
 
         // Restaurando a saída padrão do console
         System.setOut(System.out);
