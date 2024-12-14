@@ -3,126 +3,48 @@
 <log>
 </log>
 
+dez. 14, 2024 8:10:28 AM LoggerTest configurarLogger
+INFO: Logger configurado com sucesso!
+dez. 14, 2024 8:10:28 AM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 14, 2024 8:10:28 AM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Iniciando teste: testeAdicionarProdutosAoCatalogo
+dez. 14, 2024 8:10:30 AM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Criando produtos: Produto 1 e Produto 2.
+dez. 14, 2024 8:10:30 AM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Produto 1 adicionado ao catálogo.
+dez. 14, 2024 8:10:30 AM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Produto 2 adicionado ao catálogo.
+dez. 14, 2024 8:10:30 AM LoggerTest testeAdicionarProdutosAoCatalogo
+INFO: Produtos encontrados no catálogo com sucesso.
+dez. 14, 2024 8:10:30 AM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCalcularTotalPedidoSemDesconto
+INFO: Iniciando teste: testeCalcularTotalPedidoSemDesconto
+dez. 14, 2024 8:10:30 AM LoggerTest testeCalcularTotalPedidoSemDesconto
+INFO: Produto adicionado ao pedido.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCalcularTotalPedidoSemDesconto
+INFO: Total do pedido calculado (sem desconto): 50.0
+dez. 14, 2024 8:10:30 AM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Iniciando teste: testeCriarPedidoComMultiplosProdutos
+dez. 14, 2024 8:10:30 AM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Adicionando produtos ao pedido: Produto 1 e Produto 2.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Produto 1 adicionado ao pedido.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Produto 2 adicionado ao pedido.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCriarPedidoComMultiplosProdutos
+INFO: Produtos verificados no pedido com sucesso.
+dez. 14, 2024 8:10:30 AM LoggerTest setup
+INFO: Setup inicial concluído: Catalogo e Pedido criados.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCalcularTotalPedidoComDesconto
+INFO: Iniciando teste: testeCalcularTotalPedidoComDesconto
+dez. 14, 2024 8:10:30 AM LoggerTest testeCalcularTotalPedidoComDesconto
+INFO: Produto 1 adicionado ao pedido.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCalcularTotalPedidoComDesconto
+INFO: Produto 2 adicionado ao pedido.
+dez. 14, 2024 8:10:30 AM LoggerTest testeCalcularTotalPedidoComDesconto
+INFO: Total do pedido calculado (com desconto): 112.5
 
-dez. 13, 2024 11:19:52 PM LoggerTest configurarLogger
-INFO: Logger configurado com sucesso!
-dez. 13, 2024 11:19:52 PM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 13, 2024 11:19:52 PM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Iniciando teste: testeAdicionarProdutosAoCatalogo
-dez. 13, 2024 11:19:55 PM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Produtos adicionados ao catálogo.
-dez. 13, 2024 11:19:55 PM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Teste testeAdicionarProdutosAoCatalogo concluído com sucesso.
-dez. 13, 2024 11:19:55 PM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Iniciando teste: testeCalcularTotalPedidoSemDesconto
-dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Produto adicionado ao pedido.
-dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Total calculado sem desconto: 50.0
-dez. 13, 2024 11:19:55 PM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 13, 2024 11:19:55 PM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Iniciando teste: testeCriarPedidoComMultiplosProdutos
-dez. 13, 2024 11:19:55 PM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Produtos adicionados ao pedido.
-dez. 13, 2024 11:19:55 PM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Teste testeCriarPedidoComMultiplosProdutos concluído com sucesso.
-dez. 13, 2024 11:19:55 PM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Iniciando teste: testeCalcularTotalPedidoComDesconto
-dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Produtos adicionados ao pedido.
-dez. 13, 2024 11:19:55 PM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Total calculado com desconto: 112.5
-dez. 14, 2024 7:40:43 AM LoggerTest configurarLogger
-INFO: Logger configurado com sucesso!
-dez. 14, 2024 7:40:43 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:40:43 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Iniciando teste: testeAdicionarProdutosAoCatalogo
-dez. 14, 2024 7:40:45 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Criando produtos: Produto 1 e Produto 2.
-dez. 14, 2024 7:40:45 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Produto 1 adicionado ao catálogo.
-dez. 14, 2024 7:40:45 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Produto 2 adicionado ao catálogo.
-dez. 14, 2024 7:40:45 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Produtos encontrados no catálogo com sucesso.
-dez. 14, 2024 7:40:45 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Iniciando teste: testeCalcularTotalPedidoSemDesconto
-dez. 14, 2024 7:40:45 AM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Produto adicionado ao pedido.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Total do pedido calculado (sem desconto): 50.0
-dez. 14, 2024 7:40:45 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Iniciando teste: testeCriarPedidoComMultiplosProdutos
-dez. 14, 2024 7:40:45 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Adicionando produtos ao pedido: Produto 1 e Produto 2.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Produto 1 adicionado ao pedido.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Produto 2 adicionado ao pedido.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Produtos verificados no pedido com sucesso.
-dez. 14, 2024 7:40:45 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Iniciando teste: testeCalcularTotalPedidoComDesconto
-dez. 14, 2024 7:40:45 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Produto 1 adicionado ao pedido.
-dez. 14, 2024 7:40:45 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Produto 2 adicionado ao pedido.
-dez. 14, 2024 7:40:46 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Total do pedido calculado (com desconto): 112.5
-dez. 14, 2024 7:43:22 AM LoggerTest configurarLogger
-INFO: Logger configurado com sucesso!
-dez. 14, 2024 7:43:22 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:43:22 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Iniciando teste: testeAdicionarProdutosAoCatalogo
-dez. 14, 2024 7:43:23 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Criando produtos: Produto 1 e Produto 2.
-dez. 14, 2024 7:43:23 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Produto 1 adicionado ao catálogo.
-dez. 14, 2024 7:43:23 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Produto 2 adicionado ao catálogo.
-dez. 14, 2024 7:43:23 AM LoggerTest testeAdicionarProdutosAoCatalogo
-INFO: Produtos encontrados no catálogo com sucesso.
-dez. 14, 2024 7:43:23 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:43:23 AM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Iniciando teste: testeCalcularTotalPedidoSemDesconto
-dez. 14, 2024 7:43:23 AM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Produto adicionado ao pedido.
-dez. 14, 2024 7:43:23 AM LoggerTest testeCalcularTotalPedidoSemDesconto
-INFO: Total do pedido calculado (sem desconto): 50.0
-dez. 14, 2024 7:43:23 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:43:23 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Iniciando teste: testeCriarPedidoComMultiplosProdutos
-dez. 14, 2024 7:43:23 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Adicionando produtos ao pedido: Produto 1 e Produto 2.
-dez. 14, 2024 7:43:24 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Produto 1 adicionado ao pedido.
-dez. 14, 2024 7:43:24 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Produto 2 adicionado ao pedido.
-dez. 14, 2024 7:43:24 AM LoggerTest testeCriarPedidoComMultiplosProdutos
-INFO: Produtos verificados no pedido com sucesso.
-dez. 14, 2024 7:43:24 AM LoggerTest setup
-INFO: Setup inicial concluído: Catalogo e Pedido criados.
-dez. 14, 2024 7:43:24 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Iniciando teste: testeCalcularTotalPedidoComDesconto
-dez. 14, 2024 7:43:24 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Produto 1 adicionado ao pedido.
-dez. 14, 2024 7:43:24 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Produto 2 adicionado ao pedido.
-dez. 14, 2024 7:43:24 AM LoggerTest testeCalcularTotalPedidoComDesconto
-INFO: Total do pedido calculado (com desconto): 112.5
